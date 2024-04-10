@@ -18,4 +18,8 @@ def create_app(config_class=Config):
     db.init_app(app)
     migrate.init_app(app, db)
 
+    from app.routes import trigger_report_bp, get_report_bp
+    app.register_blueprint(trigger_report_bp)
+    app.register_blueprint(get_report_bp)
+
     return app
