@@ -7,5 +7,5 @@ class TimezoneInfo(db.Model):
     """
 
     id = db.Column(db.Integer, primary_key=True)
-    store_id = db.Column(db.Integer, db.ForeignKey("store_status.id"))
+    store_id = db.Column(db.String(22), db.ForeignKey("store_status.id"))
     timezone = db.Column(db.String(100))

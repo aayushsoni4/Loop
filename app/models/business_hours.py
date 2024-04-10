@@ -7,7 +7,7 @@ class BusinessHours(db.Model):
     """
 
     id = db.Column(db.Integer, primary_key=True)
-    store_id = db.Column(db.Integer, db.ForeignKey("store_status.id"))
+    store_id = db.Column(db.String(22), db.ForeignKey("store_status.id"))
     day_of_week = db.Column(db.Integer)
     open_time = db.Column(db.Time)
     close_time = db.Column(db.Time)
